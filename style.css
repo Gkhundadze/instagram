@@ -9,6 +9,9 @@ ul{
 a{
     text-decoration: none;
 }
+html, body{
+    height: 100%;
+}
 header{
     height: 50px;
     background-color: blue;
@@ -38,14 +41,23 @@ header{
     transform: translate(-50%, -50%);
     background-color: grey;
     visibility: hidden;
+    padding: 5% 10%;
 }
-.modal-box .image-container,.text-container{
+.modal-box .text-container{
     height: 100%;
+    width: 100%;
+}
+.image-container{
+    height: 100%;
+    width: 600px;
 }
 .modal-image{
     display: block;
     height: 100%;
     width: 100%;
+}
+.text-container{
+    padding: 10px 20px;
 }
 @media (max-width: 768px) {
     .flex-wrapper{

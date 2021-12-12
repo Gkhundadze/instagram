@@ -17,12 +17,21 @@ const itemsArr = [
 ]
 
 const elements = document.querySelectorAll('.wrapped-item')
-
+const textBox = document.querySelector('.text-container')
+const imageBox = document.querySelector('.modal-image')
+const modal = document.querySelector('.modal-box')
 for(let i = 0; i < elements.length; i++){
-    elements[i].addEventListener('click', (e)=>{
-        let modalImage = document.querySelector('.modal-image')
-        var modal = document.querySelector('.modal-box')
-        modalImage.src = itemsArr[i].imgUrl
+    elements[i].addEventListener('click', ()=>{
+        imageBox.src = itemsArr[i].imgUrl
         modal.style.visibility = 'visible'
+        document.body.style.backgroundColor = "rgba(0,0,0,0.6)"
     })
 }
+document.addEventListener('mouseup', (e) => {
+    if(e.target != textBox && e.target != imageBox && e.target.parentNode != textBox && e.target != modal){
+        modal.style.visibility = 'hidden'
+        document.body.style.backgroundColor = ""
+
+        console.log(e.target);
+    }
+})
